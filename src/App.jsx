@@ -374,10 +374,21 @@ setUsuarios([...usuarios, novoUsuario])`}</pre>
 />`}</pre>
 
             <div className="preview-area" style={{ fontStyle: 'normal', fontSize: '1.5rem' }}>
-              {/* TODO: Substitua o texto abaixo pelo componente <TypeAnimation /> */}
-              <h2 style={{ color: '#58a6ff' }}>Texto animado vai aparecer aqui...</h2>
+             <TypeAnimation
+  sequence={[
+    'Eu amo React!', 2000,
+    'Eu amo Node.js!', 2000,
+    'Eu amo NPM!', 2000,
+    'Eu amo programar!', 2000,
+  ]}
+  wrapper="h2"
+  speed={50}
+  repeat={Infinity}
+  style={{ color: '#58a6ff' }}
+/>
             </div>
           </div>
+          
         </div>
 
         {/* ============================================ */}
