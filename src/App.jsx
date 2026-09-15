@@ -268,12 +268,13 @@ setUsuarios([...usuarios, novoUsuario])`}</pre>
               />
               <button className="btn btn-green" onClick={() => {
                 if (!nomeInput.trim()) return
-                // TODO: Crie o usuario com uuidv4() como id
-                // TODO: Adicione ao array com setUsuarios
-                // TODO: Limpe o input com setNomeInput('')
-
-                // Remova este alert quando implementar:
-                alert('TODO: Implemente a criação do usuario com uuid')
+                // Criar usuario:
+         const novoUsuario = {
+          id: uuidv4(),           // "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"
+         nome: nomeInput,
+         criadoEm: new Date().toLocaleString()
+      }
+          setUsuarios([...usuarios, novoUsuario])
               }}>Adicionar</button>
             </div>
 
@@ -327,11 +328,11 @@ setUsuarios([...usuarios, novoUsuario])`}</pre>
             <div className="preview-area" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', minHeight: '80px', fontStyle: 'normal' }}>
               {loading
                 ? <>
-                    {/* TODO: Substitua estes textos pelos componentes de spinner */}
-                    <span>ClipLoader</span>
-                    <span>BounceLoader</span>
-                    <span>RingLoader</span>
-                    <span>PulseLoader</span>
+                   
+<ClipLoader color="#58a6ff" loading={loading} size={50} />
+<BounceLoader color="#7ee787" loading={loading} size={60} />
+<RingLoader color="#f0883e" loading={loading} size={50} />
+<PulseLoader color="#a371f7" loading={loading} size={15} />`
                   </>
                 : 'Clique no botao para ver os spinners'
               }
